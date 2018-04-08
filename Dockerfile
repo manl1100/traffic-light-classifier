@@ -1,5 +1,17 @@
 FROM tensorflow/tensorflow
 
-RUN pip install opencv-python
-RUN apt update && apt install -y libsm6 libxext6
-RUN apt-get install libfontconfig1 libxrender1
+WORKDIR /notebooks
+
+RUN apt-get update && apt-get install -y \
+    pkg-config \
+    python-dev \
+    python-opencv \
+    libopencv-dev \
+    libav-tools  \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    libjasper-dev \
+    python-numpy \
+    python-pycurl \
+    python-opencv
